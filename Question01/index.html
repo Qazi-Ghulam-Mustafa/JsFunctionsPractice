@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display The current date and time at your defualt browser</title>
+    <style>
+        * {
+            color: white;
+            margin: 0;
+            background-color: black;
+            padding: 0;
+        }
+
+        h2{
+            font-size: 32px;
+            margin-bottom: 60px;
+            margin-top: 15%;
+            text-align: center;
+            text-decoration-line: underline;
+        }
+        div{
+            font-size: 24px;
+            color: rgba(237, 234, 27, 0.966);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Your current date and time :</h2>
+    <div  id="dateTime"></div>
+
+    <script>
+        function showDateTime() {
+            const now = new Date();
+            document.getElementById("dateTime").textContent = now.toString();
+        }
+        // Here we call the function to display date and time
+        showDateTime();
+
+        setInterval(showDateTime, 1000);
+    </script>
+</body>
+
+</html>

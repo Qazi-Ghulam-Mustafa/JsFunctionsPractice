@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting User by taking his first and last name</title>
+</head>
+<body>
+    <h2>Greeting</h2>
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" placeholder="Enter your first name">
+    <br><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" placeholder="Enter your last name">
+    <br><br>
+
+    <button onclick="getGreeting()">Greet Me</button>
+
+    <p id="greeting"></p>
+
+    <script>
+        function greetUser(firstName, lastName) {
+            const fullName = firstName + " " + lastName;
+            const greetingMessage = "Hello " + fullName + "! Welcome to our website.";
+            document.getElementById("greeting").textContent = greetingMessage;
+        }
+
+        function getGreeting() {
+            const firstName = document.getElementById("firstName").value.trim();
+            const lastName = document.getElementById("lastName").value.trim();
+
+            if (firstName && lastName) {
+                greetUser(firstName, lastName);
+            } else {
+                document.getElementById("greeting").textContent = "Please enter both first and last names.";
+            }
+        }
+    </script>
+</body>
+</html>
